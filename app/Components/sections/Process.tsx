@@ -1,142 +1,87 @@
 import {
-    SlidersHorizontal,
-    Headset,
+    Search,
     PhoneCall,
-    CheckCircle2,
-    ArrowRight,
-    Sparkles,
+    CalendarCheck2,
+    Handshake,
 } from "lucide-react";
 
 const steps = [
     {
-        number: "01",
-        icon: SlidersHorizontal,
-        title: "Define Your Funding Criteria",
-        badge: "Custom Filtration",
+        icon: Search,
+        title: "Understand Your Goals",
         description:
-            "We align with your underwriting standards—specifying minimum monthly revenue ($20k+), time in business, credit thresholds, and restricted industries to guarantee qualified prospects.",
+            "We learn about your business, your target audience, and the type of campaign you want to run before anything begins.",
     },
     {
-        number: "02",
-        icon: Headset,
-        title: "Dedicated BPO Specialist Calibration",
-        badge: "Trained Closers",
-        description:
-            "Our native-speaking MCA outreach specialists undergo training on your brand messaging, script nuances, and CRM workflows before making their first call.",
-    },
-    {
-        number: "03",
         icon: PhoneCall,
-        title: "Rigorous Merchant Triple-Screening",
-        badge: "TCPA Compliant",
+        title: "Launch Outreach",
         description:
-            "We dial compliant business databases, speak directly with the primary decision-maker, confirm current working capital urgency, and verify basic application data.",
+            "Our team starts structured outbound calling and lead qualification with a clear focus on quality conversations.",
     },
     {
-        number: "04",
-        icon: CheckCircle2,
-        title: "Instant Live Transfer & Funding",
-        badge: "High Conversion",
+        icon: CalendarCheck2,
+        title: "Book Qualified Appointments",
         description:
-            "The moment an interested merchant is verified on the line, we execute a seamless warm transfer straight to your sales desk so you can present terms and close.",
+            "Interested prospects are screened and scheduled directly so your team gets better conversations to work with.",
+    },
+    {
+        icon: Handshake,
+        title: "Scale With Confidence",
+        description:
+            "We keep the process moving with consistent delivery, communication, and a partnership style you can rely on.",
     },
 ];
 
 export default function Process() {
     return (
-        <section id="process" className="relative border-t border-slate-100 bg-slate-50/60 py-24">
-            <div className="mx-auto max-w-7xl px-6">
-                {/* Section Header */}
+        <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.14),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(99,102,241,0.12),transparent_28%)]" />
+
+            <div className="relative mx-auto max-w-7xl px-6">
                 <div className="mx-auto max-w-3xl text-center">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-100/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-sky-700">
-                        <Sparkles className="h-3.5 w-3.5" />
-                        Seamless Onboarding
+                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+                        Our Process
                     </span>
 
-                    <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
-                        How We Power Your Funding Engine
+                    <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+                        A Clear Process Built for Results
                     </h2>
 
-                    <p className="mt-5 text-lg leading-8 text-slate-600">
-                        From criteria calibration to warm phone transfers, our streamlined 4-step pipeline keeps your closers talking to verified business owners who need capital today.
+                    <p className="mt-6 text-lg leading-8 text-slate-300">
+                        A simple structure helps the campaign feel organized, reliable, and
+                        easier for your team to trust.
                     </p>
                 </div>
 
-                {/* Steps Grid */}
-                <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {steps.map((step) => {
+                <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    {steps.map((step, index) => {
                         const Icon = step.icon;
+
                         return (
-                            <div
-                                key={step.number}
-                                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-sky-500 hover:shadow-xl"
+                            <article
+                                key={step.title}
+                                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/10 hover:shadow-2xl"
                             >
-                                <div>
-                                    {/* Card Top: Number & Badge */}
-                                    <div className="flex items-center justify-between">
-                                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-tr from-sky-600 to-cyan-500 text-sm font-black text-white shadow-md shadow-sky-500/20">
-                                            {step.number}
-                                        </span>
+                                <div className="absolute right-5 top-5 text-6xl font-extrabold tracking-tight text-white/10">
+                                    0{index + 1}
+                                </div>
 
-                                        <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-                                            {step.badge}
-                                        </span>
+                                <div className="relative">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/15 text-cyan-300 transition duration-300 group-hover:bg-cyan-300 group-hover:text-slate-950">
+                                        <Icon className="h-7 w-7" />
                                     </div>
 
-                                    {/* Icon Box */}
-                                    <div className="mt-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-slate-700 transition-colors duration-300 group-hover:bg-sky-600 group-hover:text-white">
-                                        <Icon className="h-6 w-6" />
-                                    </div>
-
-                                    {/* Title & Description */}
-                                    <h3 className="mt-5 text-xl font-bold tracking-tight text-slate-900">
+                                    <h3 className="mt-6 text-xl font-bold text-white">
                                         {step.title}
                                     </h3>
 
-                                    <p className="mt-3 text-sm leading-6 text-slate-600">
+                                    <p className="mt-4 text-sm leading-7 text-slate-300">
                                         {step.description}
                                     </p>
                                 </div>
-
-                                <div className="mt-6 border-t border-slate-100 pt-4">
-                                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-600 group-hover:text-sky-700">
-                                        Step {step.number} Protocol
-                                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                                    </span>
-                                </div>
-                            </div>
+                            </article>
                         );
                     })}
-                </div>
-
-                {/* Bottom Callout Banner */}
-                <div className="mt-16 rounded-2xl border border-sky-100 bg-gradient-to-r from-sky-50 via-white to-cyan-50 p-8 shadow-sm">
-                    <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                        <div>
-                            <h4 className="text-xl font-bold text-slate-900">
-                                Ready to launch your first MCA campaign?
-                            </h4>
-                            <p className="mt-1 text-sm text-slate-600">
-                                Onboard with our BPO team in less than 48 hours with zero long-term commitments.
-                            </p>
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-4">
-                            <a
-                                href="#contact"
-                                className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-sky-600/20 transition hover:bg-sky-700"
-                            >
-                                <span>Get Started Today</span>
-                                <ArrowRight className="h-4 w-4" />
-                            </a>
-                            <a
-                                href="tel:18005550199"
-                                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-                            >
-                                <span>(800) 555-0199</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
