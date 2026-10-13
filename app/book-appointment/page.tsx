@@ -1,16 +1,12 @@
 import Link from "next/link";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
+import BookingRequestForm from "@/app/Components/sections/BookingRequestForm";
 import {
   CalendarDays,
   Globe,
-  Mail,
-  Phone,
   PlayCircle,
   ShieldCheck,
-  Sparkles,
-  User,
-  Building2,
 } from "lucide-react";
 
 export default function BookAppointmentPage() {
@@ -186,24 +182,7 @@ export default function BookAppointmentPage() {
                 </div>
               </div>
 
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-                <div className="flex items-center gap-3">
-                  <Sparkles className="h-6 w-6 text-sky-600" />
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-                      Need help?
-                    </p>
-                    <h3 className="mt-1 text-2xl font-bold text-slate-900">
-                      Use the homepage contact form for general inquiries
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="mt-4 leading-7 text-slate-600">
-                  The booking page is only for appointment scheduling. For other
-                  messages, use the contact section on the homepage.
-                </p>
-              </div>
+              <BookingRequestForm />
             </div>
           </div>
 

@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarDays, Mail, Phone, User, Building2, MessageSquare } from "lucide-react";
+import {
+    CalendarDays,
+    Mail,
+    Phone,
+    User,
+    Building2,
+    MessageSquare,
+} from "lucide-react";
+import { supabase } from "@/lib/supabaseClient";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 export default function Appointment() {
     const [form, setForm] = useState({
@@ -12,19 +22,58 @@ export default function Appointment() {
         note: "",
     });
 
+    const [status, setStatus] = useState<Status>("idle");
+    const [message, setMessage] = useState("");
+
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(form);
+        setStatus("loading");
+        setMessage("");
+
+        if (!supabase) {
+            setStatus("error");
+            setMessage("Supabase is not configured yet.");
+            return;
+        }
+
+        const { error } = await supabase.from("contact_requests").insert([
+            {
+                name: form.name,
+                company: form.company,
+                email: form.email,
+                phone: form.phone,
+                note: form.note,
+            },
+        ]);
+
+        if (error) {
+            setStatus("error");
+            setMessage("Something went wrong. Please try again.");
+            return;
+        }
+
+        setStatus("success");
+        setMessage("Your message has been sent.");
+        setForm({
+            name: "",
+            company: "",
+            email: "",
+            phone: "",
+            note: "",
+        });
     };
 
     return (
-        <section id="contact" className="relative overflow-hidden bg-slate-50 py-24 scroll-mt-32">
+        <section
+            id="contact"
+            className="relative overflow-hidden bg-slate-50 py-24 scroll-mt-32"
+        >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.08),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(99,102,241,0.08),transparent_28%)]" />
 
             <div className="relative mx-auto max-w-7xl px-6">
@@ -175,10 +224,20 @@ export default function Appointment() {
 
                             <button
                                 type="submit"
-                                className="w-full rounded-2xl bg-sky-600 px-6 py-4 font-semibold text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
+                                disabled={status === "loading"}
+                                className="w-full rounded-2xl bg-sky-600 px-6 py-4 font-semibold text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-70"
                             >
-                                Submit Request
+                                {status === "loading" ? "Sending..." : "Submit Request"}
                             </button>
+
+                            {message ? (
+                                <p
+                                    className={`text-sm font-medium ${status === "success" ? "text-emerald-600" : "text-rose-600"
+                                        }`}
+                                >
+                                    {message}
+                                </p>
+                            ) : null}
                         </form>
                     </div>
                 </div>
