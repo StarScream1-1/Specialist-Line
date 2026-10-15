@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-
+import Image from "next/image";
 const services = [
   { title: "Customer Care", href: "/services/customer-care" },
   { title: "Telemarketing Service", href: "/services/telemarketing" },
@@ -25,7 +25,14 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-sky-600 to-cyan-500 text-white shadow-lg shadow-sky-600/20 ring-1 ring-slate-200 transition duration-300 hover:scale-105">
-            <span className="text-lg font-black">S</span>
+            <Image
+              src="/logo/NORM1.png"
+              alt="Specialist Line logo"
+              width={56}
+              height={56}
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="leading-tight">
             <p className="text-lg font-extrabold tracking-tight text-slate-900">
