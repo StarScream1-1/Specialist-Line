@@ -10,17 +10,18 @@ export default function VideoShowcase() {
                 <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
                     <div>
                         <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-                            Watch Specialist Line
+                            Inside Specialist Line
                         </span>
 
                         <h2 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-                            A better way to present your business
+                            Outsource your extra works to us!
                         </h2>
 
                         <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                            Add your company video here to give visitors a stronger first
-                            impression. It helps the website feel more professional and makes
-                            the brand feel real, clear, and trustworthy.
+                            &quot;Specialist Line, your business&apos;s second office! We handle the
+                            details—calls, front desk, virtual assistance, lead gen, and more—freeing you
+                            to excel at what you do best. Let us manage the small stuff; you focus on the
+                            big picture.&quot;
                         </p>
 
                         <div className="mt-8 flex flex-wrap gap-4">
@@ -28,7 +29,7 @@ export default function VideoShowcase() {
                                 href="/book-appointment"
                                 className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
                             >
-                                Book Appointment
+                                Schedule a meeting!
                                 <ArrowRight className="h-4 w-4" />
                             </Link>
 
@@ -36,35 +37,35 @@ export default function VideoShowcase() {
                                 href="#services"
                                 className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-4 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-700"
                             >
-                                View Services
+                                Our Services
                             </Link>
                         </div>
 
                         <div className="mt-8 grid gap-4 sm:grid-cols-3">
                             <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                                    Brand
+                                    01 • Why Us
                                 </p>
                                 <p className="mt-2 text-lg font-bold text-slate-900">
-                                    Modern &amp; Clean
+                                    In-House Agents
                                 </p>
                             </div>
 
                             <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                                    Style
+                                    02 • Availability
                                 </p>
                                 <p className="mt-2 text-lg font-bold text-slate-900">
-                                    Premium &amp; Simple
+                                    24/7 Operations
                                 </p>
                             </div>
 
                             <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                                    Purpose
+                                    03 • Pricing
                                 </p>
                                 <p className="mt-2 text-lg font-bold text-slate-900">
-                                    Build Trust Fast
+                                    Cost Effective
                                 </p>
                             </div>
                         </div>
@@ -83,10 +84,10 @@ export default function VideoShowcase() {
                                         </div>
                                         <div>
                                             <p className="text-sm font-semibold text-white">
-                                                Company Introduction
+                                                Inside Specialist Line
                                             </p>
                                             <p className="text-xs text-slate-400">
-                                                Autoplay enabled on reload
+                                                Your 2nd Office in action
                                             </p>
                                         </div>
                                     </div>
@@ -102,11 +103,10 @@ export default function VideoShowcase() {
                                     <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white">
                                         <PlayCircle className="h-20 w-20 text-white/90" />
                                         <h3 className="mt-5 text-2xl font-bold">
-                                            Add your company video here
+                                            We are your 2nd Office!
                                         </h3>
                                         <p className="mt-3 max-w-md text-sm leading-6 text-slate-200">
-                                            Use this space for a short intro video about Specialist
-                                            Line, your team, or how the booking process works.
+                                            Seamlessly integrating into your business operations, handling tasks from customer support to lead generation.
                                         </p>
                                     </div>
 

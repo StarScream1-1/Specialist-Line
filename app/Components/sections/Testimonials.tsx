@@ -3,21 +3,21 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Michael Anderson",
-    company: "Capital Funding Group",
+    company: "Operations Director",
     quote:
-      "Specialist Line improved the quality of our appointments and helped our closers spend more time on real opportunities. The team is professional and consistent.",
+      "Specialist Line seamlessly integrated into our business as our 2nd office. Their customer care and appointment setting team felt just like an extension of our in-house staff.",
   },
   {
     name: "Sarah Mitchell",
-    company: "Business Advance Solutions",
+    company: "Founder & CEO",
     quote:
-      "Their communication has been excellent from day one. They understand the MCA space and represent our business in a clean, professional way.",
+      "Their B2B lead generation and telemarketing campaigns delivered consistent, high-quality prospects without the burden of hiring and training an expensive local team.",
   },
   {
     name: "David Carter",
-    company: "Prime Financial Services",
+    company: "Managing Partner",
     quote:
-      "We have seen stronger conversations and better campaign flow since working with them. They are reliable and easy to work with.",
+      "The 24/7 technical support and back-office virtual assistants took all operational headaches off our plate. Truly reliable, responsive, and cost-effective.",
   },
 ];
 
@@ -36,12 +36,12 @@ export default function Testimonials() {
           </span>
 
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-            Trusted by Growing Funding Teams
+            Trusted by Over 1,400+ Happy Clients
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            We focus on professionalism, consistency, and real results. Here’s
-            what partners say about working with Specialist Line.
+            We focus on professionalism, consistency, and real results. Here&apos;s
+            what partners say about outsourcing their operations to Specialist Line.
           </p>
         </div>
 

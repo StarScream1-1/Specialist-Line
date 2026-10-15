@@ -15,35 +15,35 @@ const pillars = [
         number: "01",
         title: "WHY US?",
         description:
-            "At SpecialistLine.com, we pride ourselves on our experienced in-house agents who utilize the latest technologies to drive successful lead generation strategies. Our focus on building long-term partnerships ensures that we understand and meet the unique needs of each client, enhancing both B2B and B2C interactions.",
+            "At SpecialistLine.com, we pride ourselves on our experienced in-house agents who utilize the latest technologies to drive successful lead generation strategies. Our focus on building long-term partnerships ensures that we understand and meet the unique needs of each client, enhancing both B2B and B2C campaigns. With our pre-existing and running experience in various lead generation efforts, we are dedicated to delivering exceptional results that foster growth and success for your business.",
     },
     {
         icon: Leaf,
         number: "02",
         title: "SUSTAINABILITY",
         description:
-            "At Specialistline.com, we provide top-notch call center services tailored to enhance your business growth through exceptional customer care and efficient lead generation. Whether you operate in B2B or B2C markets, our virtual assistance offers a seamless and cost-effective solution to streamline your operations and support your team.",
+            "At Specialistline.com, we provide top-notch call center services tailored to enhance your business growth through exceptional customer care and efficient lead generation. Whether you operate in B2B or B2C markets, our virtual assistance offers a seamless and cost-effective solution to manage your customer interactions. Partner with us to elevate your customer experience and drive your business forward.",
     },
     {
         icon: TrendingUp,
         number: "03",
         title: "GROWTH",
         description:
-            "At Specialistline.com, we excel in providing exceptional customer care and comprehensive virtual assistance services to both B2B and B2C clients. Our expert call center solutions are designed to streamline lead generation, ensuring a cost-effective solution for your business needs.",
+            "At Specialistline.com, we excel in providing exceptional customer care and comprehensive virtual assistance services to both B2B and B2C clients. Our expert call center solutions are designed to streamline lead generation, ensuring a cost-effective solution for your business needs. Let us handle your customer interactions, so you can focus on growing your business.",
     },
     {
         icon: BadgeDollarSign,
         number: "04",
         title: "COST EFFECTIVE",
         description:
-            "At Specialistline.com, we offer a cost-effective solution for outsourcing your business needs through our specialized call center services. Our expert team excels in customer care, lead generation, B2B and B2C interactions, ensuring your operations stay efficient and scalable.",
+            "At Specialistline.com, we offer a cost-effective solution for outsourcing your business needs through our specialized call center services. Our expert team excels in customer care, lead generation, B2B and B2C interactions, ensuring your business operations run smoothly without the overhead costs. Additionally, our virtual assistance services provide you with flexible, high-quality support tailored to your unique requirements.",
     },
     {
         icon: Handshake,
         number: "05",
         title: "LET'S BUILD TRUST",
         description:
-            "At Specialistline.com, we pride ourselves on delivering top-tier customer care and lead generation services for both B2B and B2C clients. Our virtual assistance solutions are designed to be both comprehensive and cost-effective, ensuring your business stays supported and focused on growth.",
+            "At Specialistline.com, we pride ourselves on delivering top-tier customer care and lead generation services for both B2B and B2C clients. Our virtual assistance solutions are designed to be both comprehensive and cost-effective, ensuring your business thrives without breaking the bank. Trust us to be your reliable partner in optimizing customer interactions and driving growth.",
     },
 ];
 
@@ -90,7 +90,7 @@ export default function WhyUs() {
                         <div className="relative flex min-h-[420px] flex-col justify-end p-6 md:p-8">
                             <div className="mb-4 flex justify-end">
                                 <div className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/85 backdrop-blur">
-                                    visual placeholder
+                                    Your 2nd Office
                                 </div>
                             </div>
 
@@ -100,7 +100,7 @@ export default function WhyUs() {
                                     <span className="rounded-md bg-violet-500 px-2 py-1 font-semibold">
                                         virtual assistants
                                     </span>
-                                    .
+                                    , lead generation, and back-office support.
                                 </p>
                             </div>
                         </div>
