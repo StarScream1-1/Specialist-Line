@@ -115,7 +115,8 @@ export default function Hero() {
                             Growth • Cost Effective • 24/7 Availability
                         </div>
 
-                        <div className="overflow-x-auto pb-4">
+                        {/* Hidden scrollbar styling applied here */}
+                        <div className="overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                             <div className="flex gap-4 min-w-max snap-x snap-mandatory">
                                 {highlights.map((item) => {
                                     const Icon = item.icon;
