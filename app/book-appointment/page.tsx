@@ -12,7 +12,7 @@ import {
 
 export default function BookAppointmentPage() {
   const calendlyUrl =
-    "https://calendly.com/admin-specialistline/30min?hide_gdpr_banner=1&primary_color=0ea5e9";
+    "https://calendly.com/shadwanshahablp/30min?hide_gdpr_banner=1&primary_color=0ea5e9";
 
   return (
     <>
