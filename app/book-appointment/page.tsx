@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
 import BookingRequestForm from "@/app/Components/sections/BookingRequestForm";
+import CalendlyEmbed from "@/app/Components/sections/CalendlyEmbed";
 import {
   CalendarDays,
   Globe,
@@ -172,14 +173,7 @@ export default function BookAppointmentPage() {
                   </div>
                 </div>
 
-                <div className="h-[860px] w-full bg-white">
-                  <iframe
-                    src={calendlyUrl}
-                    title="Book an appointment with Specialist Line"
-                    className="h-full w-full"
-                    frameBorder="0"
-                  />
-                </div>
+                <CalendlyEmbed url={calendlyUrl} />
               </div>
 
               <BookingRequestForm />

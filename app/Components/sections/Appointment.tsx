@@ -58,6 +58,19 @@ export default function Appointment() {
             return;
         }
 
+        await fetch("/api/notify-managers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                kind: "contact",
+                name: form.name,
+                company: form.company,
+                email: form.email,
+                phone: form.phone,
+                note: form.note,
+            }),
+        });
+
         setStatus("success");
         setMessage("Your message has been sent.");
         setForm({
@@ -113,23 +126,33 @@ export default function Appointment() {
                             <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
                                 <CalendarDays className="h-5 w-5 text-sky-600" />
                                 <div>
-                                    <p className="text-sm font-semibold text-slate-900">Fast response</p>
-                                    <p className="text-sm text-slate-600">We review requests quickly</p>
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Fast response
+                                    </p>
+                                    <p className="text-sm text-slate-600">
+                                        We review requests quickly
+                                    </p>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
                                 <Mail className="h-5 w-5 text-sky-600" />
                                 <div>
-                                    <p className="text-sm font-semibold text-slate-900">Email follow-up</p>
-                                    <p className="text-sm text-slate-600">Managers can review messages later</p>
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Email follow-up
+                                    </p>
+                                    <p className="text-sm text-slate-600">
+                                        Managers can review messages later
+                                    </p>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
                                 <Phone className="h-5 w-5 text-sky-600" />
                                 <div>
-                                    <p className="text-sm font-semibold text-slate-900">Call back support</p>
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Call back support
+                                    </p>
                                     <p className="text-sm text-slate-600">We can reach out if needed</p>
                                 </div>
                             </div>

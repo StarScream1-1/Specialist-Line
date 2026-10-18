@@ -63,6 +63,21 @@ export default function BookingRequestForm() {
             return;
         }
 
+        await fetch("/api/notify-managers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                kind: "appointment",
+                name: form.name,
+                company: form.company,
+                email: form.email,
+                phone: form.phone,
+                preferred_date: form.preferred_date,
+                preferred_time: form.preferred_time,
+                message: form.message,
+            }),
+        });
+
         setStatus("success");
         setMessage("Your appointment request has been sent.");
         setForm({
