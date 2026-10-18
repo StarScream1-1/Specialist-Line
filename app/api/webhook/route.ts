@@ -9,10 +9,18 @@ import {
 } from "@/lib/email";
 
 export async function GET() {
+    const resend = getResendClient();
+    const managerEmails = getManagerEmails();
+    const from = getFromEmail();
+
     return NextResponse.json({
         ok: true,
         message: "Calendly webhook endpoint is active",
         admin_configured: !!supabaseAdmin,
+        resend_configured: !!resend,
+        manager_emails_count: managerEmails.length,
+        manager_emails: managerEmails,
+        from_email: from,
     });
 }
 
@@ -70,9 +78,19 @@ export async function POST(req: Request) {
         const managerEmails = getManagerEmails();
         const from = getFromEmail();
 
-        if (resend && managerEmails.length && from) {
+        let emailStatus: { sent: boolean; id?: string | null; error?: string } = {
+            sent: false,
+        };
+
+        if (!resend) {
+            console.error("Resend client not initialized - missing RESEND_API_KEY");
+            emailStatus.error = "Missing RESEND_API_KEY";
+        } else if (!managerEmails.length) {
+            console.error("No manager emails configured in MANAGER_EMAILS");
+            emailStatus.error = "Missing MANAGER_EMAILS";
+        } else {
             try {
-                await resend.emails.send({
+                const sendRes = await resend.emails.send({
                     from,
                     to: managerEmails,
                     subject: `New Calendly Booking: ${inviteeName}`,
@@ -90,12 +108,25 @@ export async function POST(req: Request) {
             )}</pre>
           `,
                 });
+
+                if (sendRes.error) {
+                    console.error("Resend API error:", sendRes.error);
+                    emailStatus.error = sendRes.error.message;
+                } else {
+                    emailStatus = { sent: true, id: sendRes.data?.id };
+                }
             } catch (emailErr) {
-                console.error("Failed to send manager notification email:", emailErr);
+                const errMsg = emailErr instanceof Error ? emailErr.message : String(emailErr);
+                console.error("Failed to send manager notification email:", errMsg);
+                emailStatus.error = errMsg;
             }
         }
 
-        return NextResponse.json({ ok: true, message: "Booking processed successfully" });
+        return NextResponse.json({
+            ok: true,
+            message: "Booking processed successfully",
+            emailStatus,
+        });
     } catch (err) {
         const message = err instanceof Error ? err.message : "Webhook error";
         console.error("Webhook processing error:", err);
