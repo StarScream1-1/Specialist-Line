@@ -90,9 +90,11 @@ export default function Hero() {
                         Trusted BPO & MCA Lead Generation Partner
                     </span>
 
-                    <h1 className="mt-8 max-w-4xl text-4xl font-black leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
+                    <h1 className="mt-8 max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl text-slate-100">
                         We are your 2nd Office!
-                        <span className="mt-3 block text-cyan-300">At Specialist Line</span>
+                        <span className="mt-2 block bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-sm">
+                            At Specialist Line
+                        </span>
                     </h1>
 
                     <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
