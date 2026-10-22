@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
+import FloatingActionBar from "@/app/Components/ui/FloatingActionBar";
+import Link from "next/link";
 import {
   BadgeCheck,
   Clock3,
@@ -12,15 +14,21 @@ import {
   Phone,
   Users2,
   Building2,
+  Sparkles,
+  ShieldCheck,
+  Wifi,
+  Server,
+  Lock,
+  ArrowRight,
+  Calendar,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | Specialist Line – Expert Virtual Support Services",
+  title: "About | Specialist Line – 24/7 Global BPO & Outsourcing Partner",
   description:
-    "Discover SpecialistLine, your premier call center service provider in Dhaka, Bangladesh. We empower businesses with customized, cost-effective virtual support services available 24/7.",
+    "Discover Specialist Line, your premier call center and BPO service provider based in Dhaka, Bangladesh. Empowering US, UK, and global businesses with 24/7 dedicated virtual support.",
 };
 
-// Inline Social Icons since lucide-react doesn't include brand logos
 function FacebookIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -42,66 +50,75 @@ const mission = [
     icon: Heart,
     title: "Our Mission",
     description:
-      "To empower businesses by providing reliable, efficient, and cost-effective virtual support services, ensuring operational excellence and customer satisfaction.",
+      "To empower businesses by providing reliable, efficient, and cost-effective virtual support services, ensuring operational excellence, rapid scalability, and customer delight.",
   },
   {
     icon: Leaf,
     title: "Our Vision",
     description:
-      "To be the most trusted virtual support partner for businesses worldwide, helping companies of all sizes scale without the overhead of traditional hiring.",
+      "To be the premier virtual support & lead generation partner for businesses worldwide, helping companies of all sizes scale without the burden and overhead of local domestic hiring.",
   },
   {
     icon: Handshake,
     title: "Our Values",
     description:
-      "Integrity, excellence, reliability, and innovation drive everything we do. We treat your business like our own—because your success is our success.",
+      "Integrity, rigorous QA standards, punctuality, and mutual growth drive everything we do. We treat your company like our own—because your success is our success.",
   },
 ];
 
-const whyUs = [
+const infrastructure = [
   {
-    icon: BadgeCheck,
-    title: "Experienced Team",
-    description: "Our professionals are trained to handle diverse business needs with precision.",
+    icon: Wifi,
+    title: "Redundant Fiber ISP",
+    desc: "Dual high-speed dedicated leased lines with automated hot-failover ensures zero dropped calls.",
   },
   {
-    icon: Users2,
-    title: "Customized Solutions",
-    description: "We tailor our services to align with your specific requirements.",
+    icon: Server,
+    title: "100% Power Generator Backup",
+    desc: "Uninterruptible Power Supply (UPS) plus industrial on-site generators guarantee 24/7/365 uptime.",
   },
   {
-    icon: Clock3,
-    title: "24/7 Availability",
-    description: "Ensuring your business remains operational around the clock.",
+    icon: Lock,
+    title: "Data Security & Compliance",
+    desc: "Clean-desk policy, encrypted CRM connections, non-disclosure agreements, and strict data privacy standards.",
   },
   {
-    icon: Building2,
-    title: "Cost Efficiency",
-    description: "Delivering top-notch services without the overhead costs.",
+    icon: ShieldCheck,
+    title: "Dedicated QA & Floor Supervision",
+    desc: "Real-time call monitoring, weekly scoring calibrations, and native English communication coaching.",
   },
 ];
 
 const team = [
   {
     name: "MD Boni",
-    role: "Founder",
-    description: "Visionary leader with years of experience in call center operations and BPO services.",
-    facebook: "https://www.facebook.com/your.personal.fb.profile", // Replace with your personal FB link
-    linkedin: "https://www.linkedin.com/in/your-linkedin-profile",
+    role: "Founder & Managing Director",
+    description:
+      "Visionary leader with deep expertise in BPO floor management, international call center operations, and client acquisition.",
+    facebook: "https://www.facebook.com/specialistline.office/",
+    linkedin: "https://www.linkedin.com/company/specialistline",
   },
   {
     name: "Alex Amit",
-    role: "Operations Manager",
-    description: "Expert in streamlining workflows and ensuring every client gets the best support possible.",
-    facebook: "https://www.facebook.com/your.personal.fb.profile", // Replace with your personal FB link
-    linkedin: "https://www.linkedin.com/in/your-linkedin-profile",
+    role: "Head of Operations",
+    description:
+      "Specialist in workflow optimization, agent training frameworks, and ensuring seamless SLA delivery for all overseas clients.",
+    facebook: "https://www.facebook.com/specialistline.office/",
+    linkedin: "https://www.linkedin.com/company/specialistline",
   },
 ];
 
 const industries = [
-  "E-Commerce", "Healthcare", "Finance & Fintech", "Real Estate", "SaaS / Tech",
-  "Insurance", "Retail", "Legal Services", "Education", "Hospitality",
-  "Logistics", "Startups",
+  "MCA & Business Funding",
+  "Fintech & Banking",
+  "E-Commerce & Retail",
+  "Healthcare & Telehealth",
+  "Real Estate & Property",
+  "SaaS & Technology",
+  "Insurance Services",
+  "Legal & Document Processing",
+  "Logistics & Dispatch",
+  "Digital Marketing Agencies",
 ];
 
 export default function AboutPage() {
@@ -111,20 +128,39 @@ export default function AboutPage() {
       <main>
         {/* Hero */}
         <section className="page-hero-bg relative overflow-hidden py-24 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.2),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.15),transparent_28%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.2),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.18),transparent_30%)]" />
+
           <div className="relative mx-auto max-w-7xl px-6 text-center">
-            <span className="animate-fade-up inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur">
-              About Us
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-300 backdrop-blur-md">
+              <Sparkles className="h-3.5 w-3.5" />
+              Inside Specialist Line
             </span>
-            <h1 className="animate-fade-up delay-100 mt-6 text-5xl font-extrabold tracking-tight md:text-7xl">
-              We are your{" "}
-              <span className="gradient-text">2nd Office!</span>
+
+            <h1 className="mt-6 text-5xl font-extrabold tracking-tight md:text-7xl">
+              We Are Your <span className="gradient-text">2nd Office!</span>
             </h1>
-            <p className="animate-fade-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              Specialistline.com is a premier call center service provider, offering top-tier
-              support to businesses of all sizes. Our specialized agents are trained to deliver
-              the best customer support, ensuring satisfaction with every interaction.
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              Specialist Line is a premier BPO, telemarketing, and virtual assistance provider based in
+              Dhaka, Bangladesh. We bridge world-class operational talent with ambitious businesses
+              across the United States, United Kingdom, and global markets.
             </p>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/book-appointment"
+                className="inline-flex items-center gap-2 rounded-2xl bg-sky-500 px-7 py-3.5 text-sm font-bold text-white shadow-xl shadow-sky-500/25 transition hover:-translate-y-0.5 hover:bg-sky-400"
+              >
+                <Calendar className="h-4 w-4" />
+                Schedule a Meeting
+              </Link>
+              <Link
+                href="/contacts"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
+              >
+                Contact Our Team
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -133,27 +169,30 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.06),transparent_30%)]" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="mx-auto mb-16 max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-                What drives us
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-sky-600">
+                Guiding Principles
               </span>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-                Purpose-led. People-first.
+              <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+                Purpose-Led. Results-Driven.
               </h2>
+              <p className="mt-4 text-base text-slate-600">
+                Built from the ground up to provide seamless second-office capabilities.
+              </p>
             </div>
+
             <div className="grid gap-8 md:grid-cols-3">
-              {mission.map((item, i) => {
+              {mission.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.title}
-                    className="animate-fade-up rounded-[1.75rem] border border-slate-200 bg-slate-50 p-8 transition hover:-translate-y-2 hover:border-sky-300 hover:bg-white hover:shadow-xl"
-                    style={{ animationDelay: `${i * 120}ms` }}
+                    className="group rounded-[2rem] border border-slate-200 bg-slate-50/70 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/10"
                   >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100">
-                      <Icon className="h-7 w-7 text-sky-600" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-600 transition group-hover:bg-sky-600 group-hover:text-white">
+                      <Icon className="h-7 w-7" />
                     </div>
                     <h3 className="mt-6 text-2xl font-bold text-slate-900">{item.title}</h3>
-                    <p className="mt-4 text-[15px] leading-7 text-slate-600">{item.description}</p>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
                   </div>
                 );
               })}
@@ -161,83 +200,37 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Who we are */}
+        {/* Infrastructure & Security Section */}
         <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.14),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(99,102,241,0.12),transparent_28%)]" />
-          <div className="relative mx-auto max-w-7xl px-6">
-            <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-              <div className="animate-slide-left">
-                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                  Who we are
-                </span>
-                <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-                  Specialist Line — Your Business&apos;s Second Office
-                </h2>
-                <p className="mt-6 text-lg leading-8 text-slate-300">
-                  We excel in both B2B and B2C sectors, providing cost-effective solutions that drive
-                  lead generation and boost sales. Our easy refund process enhances customer trust and
-                  loyalty. Choose Specialistline.com for unparalleled expertise and results in call center services.
-                </p>
-                <p className="mt-4 text-lg leading-8 text-slate-300">
-                  Based in Dhaka, Bangladesh, we serve clients across the globe — providing
-                  professional, round-the-clock support that fits any timezone and any industry.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="mailto:admin@specialistline.com"
-                    className="inline-flex items-center gap-2 rounded-2xl bg-sky-600 px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sky-700"
-                  >
-                    Contact Us
-                  </a>
-                </div>
-              </div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.14),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.14),transparent_35%)]" />
 
-              {/* Video/image placeholder */}
-              <div className="animate-slide-right">
-                <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur">
-                  <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 p-8 text-center">
-                    <div>
-                      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-sky-600/20 ring-2 ring-sky-500/40">
-                        <svg className="h-10 w-10 text-sky-300" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                      <p className="mt-4 text-lg font-semibold text-white">Team Introduction Video</p>
-                      <p className="mt-2 text-sm text-slate-400">Add your company video here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="relative overflow-hidden bg-slate-100 py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.10),transparent_30%)]" />
           <div className="relative mx-auto max-w-7xl px-6">
-            <div className="mx-auto mb-16 max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-                Why Choose Us
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
+                Operational Foundation
               </span>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-                Top Reasons to Partner with Specialist Line
+              <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
+                Built on Enterprise-Grade Infrastructure
               </h2>
+              <p className="mt-4 text-base text-slate-300">
+                We invest in top-tier technology and facility security so your outsourced operations
+                run with zero interruptions.
+              </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {whyUs.map((item, i) => {
-                const Icon = item.icon;
+
+            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {infrastructure.map((inf) => {
+                const Icon = inf.icon;
                 return (
                   <div
-                    key={item.title}
-                    className="animate-scale-in group rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-sky-300 hover:shadow-xl"
-                    style={{ animationDelay: `${i * 100}ms` }}
+                    key={inf.title}
+                    className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/10"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 transition group-hover:bg-sky-600">
-                      <Icon className="h-6 w-6 text-sky-600 transition group-hover:text-white" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-500/20 text-cyan-300 border border-sky-500/30">
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-6 text-xl font-semibold text-slate-900">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                    <h3 className="mt-5 text-lg font-bold text-white">{inf.title}</h3>
+                    <p className="mt-2 text-xs leading-6 text-slate-400">{inf.desc}</p>
                   </div>
                 );
               })}
@@ -245,30 +238,34 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team */}
+        {/* Leadership & Operations Team */}
         <section className="relative overflow-hidden bg-white py-24">
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="mx-auto mb-16 max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
-                Our Team
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-sky-600">
+                Leadership Team
               </span>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-                Some of the members from our team!
+              <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+                The People Behind Your 2nd Office
               </h2>
+              <p className="mt-4 text-base text-slate-600">
+                Hands-on operational leaders committed to your success.
+              </p>
             </div>
+
             <div className="grid gap-8 md:grid-cols-2 lg:max-w-3xl lg:mx-auto">
-              {team.map((member, i) => (
+              {team.map((member) => (
                 <div
                   key={member.name}
-                  className="animate-fade-up group rounded-[2rem] border border-slate-200 bg-slate-50 p-8 text-center transition-all hover:-translate-y-2 hover:border-sky-300 hover:bg-white hover:shadow-xl"
-                  style={{ animationDelay: `${i * 150}ms` }}
+                  className="group rounded-[2rem] border border-slate-200 bg-slate-50/70 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:border-sky-300 hover:bg-white hover:shadow-xl"
                 >
-                  {/* Photo placeholder */}
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-sky-400 to-indigo-600 text-white shadow-lg">
-                    <span className="text-3xl font-extrabold">{member.name.charAt(0)}</span>
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-gradient-to-tr from-sky-600 to-cyan-500 text-white shadow-lg shadow-sky-600/30">
+                    <span className="text-2xl font-black">{member.name.charAt(0)}</span>
                   </div>
                   <h3 className="mt-5 text-2xl font-bold text-slate-900">{member.name}</h3>
-                  <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-sky-600">{member.role}</p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-sky-600">
+                    {member.role}
+                  </p>
                   <p className="mt-4 text-sm leading-6 text-slate-600">{member.description}</p>
                   <div className="mt-6 flex justify-center gap-3">
                     <a
@@ -276,6 +273,7 @@ export default function AboutPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600"
+                      aria-label="Facebook"
                     >
                       <FacebookIcon className="h-4 w-4" />
                     </a>
@@ -284,6 +282,7 @@ export default function AboutPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600"
+                      aria-label="LinkedIn"
                     >
                       <LinkedinIcon className="h-4 w-4" />
                     </a>
@@ -294,29 +293,27 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Industries */}
+        {/* Industries Served */}
         <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.08),transparent_50%)]" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                Industries we serve
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
+                Industry Expertise
               </span>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-                We Work Across All Sectors
+              <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
+                Versatile Across High-Growth Sectors
               </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                At SpecialistLine.com, we serve all industries that require outsourcing for their
-                additional operational needs, including lead generation, customer support, chat support,
-                and virtual assistance.
+              <p className="mt-4 text-base text-slate-300">
+                From fast-paced fintech & MCA funding to e-commerce support, our workflows
+                adapt directly to your compliance and performance standards.
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-3">
-              {industries.map((ind, i) => (
+
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {industries.map((ind) => (
                 <span
                   key={ind}
-                  className="animate-fade-up rounded-full border border-white/15 bg-white/8 px-5 py-2 text-sm font-medium text-white backdrop-blur transition hover:border-cyan-300/60 hover:bg-white/15"
-                  style={{ animationDelay: `${i * 60}ms` }}
+                  className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition hover:border-cyan-300/60 hover:bg-white/15"
                 >
                   {ind}
                 </span>
@@ -325,44 +322,36 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-indigo-700 py-24 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_40%)]" />
+        {/* Bottom CTA Banner */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 via-sky-700 to-indigo-800 py-20 text-white">
           <div className="relative mx-auto max-w-4xl px-6 text-center">
-            <h2 className="animate-fade-up text-4xl font-extrabold tracking-tight md:text-5xl">
-              📬 Get In Touch
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+              Ready to Upgrade Your Operations?
             </h2>
-            <p className="animate-fade-up delay-100 mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/80">
-              Ready to elevate your business operations? Contact us today to discuss how our services
-              can be tailored to meet your unique needs.
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-sky-100">
+              Schedule a free 30-minute discovery call with our team. We’ll break down your current
+              workflows and provide a clear, customized staffing roadmap.
             </p>
-            <div className="animate-fade-up delay-200 mt-10 flex flex-wrap justify-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-cyan-200" />
-                <div className="text-left">
-                  <p>info@specialistline.com</p>
-                  <p>admin@specialistline.com</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-5 w-5 text-cyan-200" />
-                <span>+1 786-894-0005</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-cyan-200" />
-                <span>15/3, Ringroad, Shymoli, Dhaka, Bangladesh</span>
-              </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/book-appointment"
+                className="inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-sm font-bold text-sky-800 shadow-xl transition hover:-translate-y-0.5 hover:bg-slate-100"
+              >
+                <span>Book Free Discovery Session</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/contacts"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+              >
+                Contact Directly
+              </Link>
             </div>
-            <a
-              href="mailto:admin@specialistline.com"
-              className="animate-fade-up delay-300 mt-10 inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-sm font-semibold text-sky-700 shadow-xl transition hover:-translate-y-0.5 hover:bg-slate-100"
-            >
-              Contact Us
-            </a>
           </div>
         </section>
       </main>
       <Footer />
+      <FloatingActionBar />
     </>
   );
 }

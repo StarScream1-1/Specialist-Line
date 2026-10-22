@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
+import FloatingActionBar from "@/app/Components/ui/FloatingActionBar";
 import {
   ArrowLeftRight,
   CheckCircle2,
@@ -222,6 +223,7 @@ export default function InboundOutboundPage() {
         </section>
       </main>
       <Footer />
+      <FloatingActionBar />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
+import FloatingActionBar from "@/app/Components/ui/FloatingActionBar";
 import {
   Headphones,
   CheckCircle2,
@@ -266,6 +267,7 @@ export default function CustomerCarePage() {
         </section>
       </main>
       <Footer />
+      <FloatingActionBar />
     </>
   );
 }

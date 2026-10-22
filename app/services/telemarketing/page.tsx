@@ -1,31 +1,43 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
-import { PhoneCall, CheckCircle2, ArrowRight, TrendingUp, Target, BarChart3, Users } from "lucide-react";
+import FloatingActionBar from "@/app/Components/ui/FloatingActionBar";
+import {
+  PhoneForwarded,
+  CheckCircle2,
+  ArrowRight,
+  TrendingUp,
+  Target,
+  BarChart3,
+  Sparkles,
+  PhoneCall,
+  Check,
+  ShieldCheck,
+} from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Telemarketing Service | Specialist Line",
+  title: "Telemarketing Services | Specialist Line",
   description:
-    "Drive sales and grow revenue with Specialist Line's professional telemarketing service. Expert agents who convert calls into customers.",
+    "Accelerate your sales pipeline with Specialist Line's professional telemarketing services. B2B and B2C cold calling, warm follow-ups, and appointment setting.",
 };
 
 const features = [
-  "Outbound sales calls to qualified leads",
-  "Product & service promotion campaigns",
-  "Script writing & agent training",
-  "Lead qualification & nurturing",
-  "Database management & CRM updates",
-  "Appointment setting for your sales team",
-  "Follow-up campaigns & re-engagement",
-  "Performance tracking & detailed reporting",
+  "Custom cold calling scripts built with objection handling",
+  "B2B and B2C sales outreach with real-time transfer options",
+  "Warm lead qualification and appointment setting",
+  "Dedicated campaign dialers with local caller ID presence",
+  "Rigorous call recording and QA scoring calibrations",
+  "Detailed daily contact rate and conversion analytics",
+  "Seamless CRM pipeline synchronization",
+  "Strict adherence to compliance and DNC registries",
 ];
 
 const stats = [
-  { icon: Target, value: "45%+", label: "Higher Conversion Rate" },
-  { icon: PhoneCall, value: "500+", label: "Daily Calls Per Agent" },
-  { icon: BarChart3, value: "3x", label: "ROI on Average" },
-  { icon: Users, value: "24/7", label: "Campaign Availability" },
+  { icon: TrendingUp, value: "3.5x", label: "Pipeline Pipeline Velocity" },
+  { icon: Target, value: "B2B / B2C", label: "Multi-Market Ready" },
+  { icon: BarChart3, value: "Daily", label: "Transparent Reporting" },
+  { icon: PhoneCall, value: "Trained", label: "Native English Speakers" },
 ];
 
 export default function TelemarketingPage() {
@@ -33,52 +45,113 @@ export default function TelemarketingPage() {
     <>
       <Navbar />
       <main>
+        {/* Hero Section */}
         <section className="page-hero-bg relative overflow-hidden py-24 text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.2),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.15),transparent_28%)]" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
-                <Link href="/#services" className="mb-6 inline-flex items-center gap-1 text-sm text-sky-300 hover:text-sky-100">
+                <Link
+                  href="/#services"
+                  className="mb-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sky-300 hover:text-sky-100"
+                >
                   ← All Services
                 </Link>
-                <span className="animate-fade-up inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur">
-                  Telemarketing
-                </span>
-                <h1 className="animate-fade-up delay-100 mt-6 text-5xl font-extrabold tracking-tight md:text-6xl">
-                  Professional <span className="gradient-text">Telemarketing</span>
+
+                <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-300 backdrop-blur-md">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Outbound Sales Powerhouse
+                </div>
+
+                <h1 className="mt-6 text-5xl font-extrabold tracking-tight md:text-6xl">
+                  High-Performance <span className="gradient-text">Telemarketing</span>
                 </h1>
-                <p className="animate-fade-up delay-200 mt-6 text-lg leading-8 text-slate-300">
-                  Turn cold contacts into loyal customers with our results-driven telemarketing campaigns.
-                  Our trained agents represent your brand and close deals on your behalf.
+
+                <p className="mt-6 text-lg leading-8 text-slate-300">
+                  Turn cold contacts into enthusiastic buyers and booked appointments. Our persuasive,
+                  fluent callers navigate gatekeepers, handle tough objections, and deliver consistent sales results.
                 </p>
-                <div className="animate-fade-up delay-300 mt-8 flex flex-wrap gap-4">
-                  <Link href="/book-appointment" className="inline-flex items-center gap-2 rounded-2xl bg-sky-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-sky-700">
-                    Get Started <ArrowRight className="h-4 w-4" />
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link
+                    href="/book-appointment"
+                    className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 to-cyan-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-sky-600/30 transition hover:-translate-y-0.5 hover:shadow-sky-500/50"
+                  >
+                    <span>Launch Outbound Campaign</span>
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link href="/contacts" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-6 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20">
+
+                  <Link
+                    href="/contacts"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                  >
                     Contact Us
                   </Link>
                 </div>
               </div>
+
               <div className="flex justify-center">
-                <div className="animate-float flex h-56 w-56 items-center justify-center rounded-[3rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur">
-                  <PhoneCall className="h-28 w-28 text-sky-300" strokeWidth={1.2} />
+                <div className="relative">
+                  <div className="absolute -inset-4 rounded-[3.5rem] bg-gradient-to-tr from-sky-500/30 to-indigo-500/30 blur-2xl" />
+                  <div className="animate-float relative flex h-60 w-60 items-center justify-center rounded-[3rem] border border-white/15 bg-white/10 shadow-2xl backdrop-blur-xl">
+                    <PhoneForwarded className="h-28 w-28 text-sky-300" strokeWidth={1.3} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="relative bg-slate-950 py-16">
+        {/* Video Section with in-house calling footage */}
+        <section className="bg-slate-950 py-20 border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
+              <span className="text-xs font-bold uppercase tracking-widest text-cyan-400">
+                Calling Floor Operations
+              </span>
+              <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
+                Active Outbound Teams in Real Time
+              </h2>
+              <p className="mt-3 text-sm text-slate-400">
+                High-energy calling environment equipped with enterprise VOIP and noise-cancelling headsets.
+              </p>
+            </div>
+
+            <div className="overflow-hidden rounded-[2rem] border border-white/15 bg-slate-900 shadow-2xl">
+              <div className="relative aspect-video">
+                <video
+                  className="h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src="/videos/inbound-outbound.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-slate-950/30" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Row */}
+        <section className="relative bg-slate-950 py-16 border-b border-white/10">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
               {stats.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
-                  <div key={stat.label} className="animate-scale-in rounded-[1.5rem] border border-white/8 bg-white/5 p-6 text-center backdrop-blur" style={{ animationDelay: `${i * 100}ms` }}>
-                    <Icon className="mx-auto h-7 w-7 text-sky-400" />
-                    <p className="mt-3 text-3xl font-extrabold text-white">{stat.value}</p>
-                    <p className="mt-1 text-sm font-medium text-slate-400">{stat.label}</p>
+                  <div
+                    key={stat.label}
+                    className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md"
+                  >
+                    <Icon className="mx-auto h-6 w-6 text-sky-400" />
+                    <p className="mt-3 text-3xl font-black text-white">{stat.value}</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      {stat.label}
+                    </p>
                   </div>
                 );
               })}
@@ -86,45 +159,60 @@ export default function TelemarketingPage() {
           </div>
         </section>
 
+        {/* Deliverables Checklist Section */}
         <section className="relative overflow-hidden bg-white py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.06),transparent_30%)]" />
-          <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">What we offer</span>
-                <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-600">
+                  Targeted Outreach
+                </span>
+                <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                   Sales-Driven Telemarketing Campaigns
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Our telemarketing agents are trained persuaders who understand the art of the call.
-                  From cold calling to warm leads, we build your pipeline and convert opportunities
-                  into revenue — all while maintaining your brand's professional image.
+                <p className="mt-5 text-base leading-7 text-slate-600">
+                  Our telemarketing callers are trained persuaders who understand the psychology of the phone.
+                  From cold calling prospect lists to warming up inbound inquiries, we scale your pipeline
+                  while maintaining the utmost brand professionalism.
                 </p>
+
                 <div className="mt-8 flex flex-col gap-4">
-                  {[
-                    { icon: TrendingUp, title: "Higher Conversion Rates", desc: "Optimized scripts and experienced agents drive measurable results." },
-                    { icon: Target, title: "Targeted Campaigns", desc: "We focus on your ideal customer profile for maximum efficiency." },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.title} className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100">
-                          <Icon className="h-5 w-5 text-sky-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-slate-900">{item.title}</h3>
-                          <p className="mt-1 text-sm text-slate-600">{item.desc}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
+                  <div className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
+                      <TrendingUp className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-900">Higher Conversion Rates</h3>
+                      <p className="mt-1 text-xs text-slate-600">
+                        Battle-tested objection handling frameworks keep prospects engaged through to the close.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
+                      <ShieldCheck className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-900">Full Compliance Standard</h3>
+                      <p className="mt-1 text-xs text-slate-600">
+                        TCPA and DNC registry scrubbed dialing to protect your business reputation.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-4">
-                {features.map((f, i) => (
-                  <div key={f} className="animate-fade-up flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-x-1 hover:border-sky-300 hover:bg-white hover:shadow-md" style={{ animationDelay: `${i * 60}ms` }}>
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-sky-600" />
-                    <span className="text-sm font-medium text-slate-700">{f}</span>
+
+              <div className="grid gap-3.5">
+                {features.map((f) => (
+                  <div
+                    key={f}
+                    className="flex items-center gap-3.5 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 transition hover:border-sky-300 hover:bg-white hover:shadow-md"
+                  >
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                      <Check className="h-3.5 w-3.5" />
+                    </div>
+                    <span className="text-sm font-semibold text-slate-800">{f}</span>
                   </div>
                 ))}
               </div>
@@ -132,34 +220,29 @@ export default function TelemarketingPage() {
           </div>
         </section>
 
-        <section className="bg-slate-950 py-20">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="overflow-hidden rounded-[2rem] border border-white/10">
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 p-8 text-center">
-                <div>
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-sky-600/20 ring-2 ring-sky-500/40">
-                    <svg className="h-10 w-10 text-sky-300" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                  </div>
-                  <p className="mt-4 text-lg font-semibold text-white">Telemarketing Service Video</p>
-                  <p className="mt-2 text-sm text-slate-400">Add your service video here</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-indigo-700 py-24 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_40%)]" />
+        {/* CTA Bottom Banner */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-indigo-700 py-20 text-white">
           <div className="relative mx-auto max-w-4xl px-6 text-center">
-            <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">Ready to Boost Your Sales?</h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">Let our telemarketing experts drive revenue for your business while you focus on delivery.</p>
-            <Link href="/book-appointment" className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-sm font-semibold text-sky-700 shadow-xl transition hover:-translate-y-0.5 hover:bg-slate-100">
-              Schedule a Meeting <ArrowRight className="h-4 w-4" />
-            </Link>
+            <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
+              Ready to Accelerate Outbound Sales?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-white/80">
+              Schedule a strategy call to review your target market and get sample outbound scripts.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/book-appointment"
+                className="inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-sm font-bold text-sky-700 shadow-xl transition hover:-translate-y-0.5 hover:bg-slate-100"
+              >
+                <span>Book Outbound Strategy Session</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
       <Footer />
+      <FloatingActionBar />
     </>
   );
 }

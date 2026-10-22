@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/Components/layout/Navbar";
 import Footer from "@/app/Components/layout/Footer";
+import FloatingActionBar from "@/app/Components/ui/FloatingActionBar";
 import {
   CheckCircle2,
   ArrowRight,
@@ -221,6 +222,7 @@ export default function SocialMediaPage() {
         </section>
       </main>
       <Footer />
+      <FloatingActionBar />
     </>
   );
 }
